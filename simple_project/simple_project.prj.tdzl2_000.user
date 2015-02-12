@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UserConfiguation xmlns="http://ssengine.org/schema/user/1/">
-  <Emulator>iPad</Emulator>
+  <Emulator>iPhone4S</Emulator>
   <Renderer>16</Renderer>
 </UserConfiguation>

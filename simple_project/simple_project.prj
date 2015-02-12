@@ -7,7 +7,14 @@
         width="1024" 
         height="768" 
         density="1.0" />
-      <Title>{PROJECT_NAME} - {EMULATOR_NAME} Emulator</Title>
+      <Title>{PROJECT_NAME} - {EMULATOR} Emulator</Title>
+    </Emulator>
+    <Emulator name="iPhone4S">
+      <Screen
+        width="640"
+        height="960"
+        density="2.0" />
+      <Title>{PROJECT_NAME} - {EMULATOR} Emulator</Title>
     </Emulator>
   </Emulators>
 </Project>
