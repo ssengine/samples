@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://ssengine.org/schema/prj/1/">
   <Name>First Game</Name>
+  <Scripts>
+    <Script name="onCreate">
+      require("log").trace("Hello.");
+    </Script>
+    <Script name="onExit">
+      require("log").trace("Bye.");
+    </Script>
+  </Scripts>
   <Emulators>
     <Emulator name="iPad">
       <Screen 
