@@ -8,6 +8,10 @@
   <Scripts>
     <Script name="onCreate">
       require("log").trace("Hello.");
+      package.path = "res:///?.lua";
+      require("main");
+      loaduri("res:///main.lua")();
+      douri("res:///main.lua");
     </Script>
     <Script name="onExit">
       require("log").trace("Bye.");
