@@ -12,9 +12,32 @@
       require("main");
       loaduri("res:///main.lua")();
       douri("res:///main.lua");
+	  
+	  local r2d = require("render2d")
+	  _G["img"] = r2d.createImage("E:/qrcode.png");
+	  _G["img"]:load()
+    </Script>
+	<Script name="onFrame">
+	  local r2d = require("render2d")
+
+	  --draw image.
+	  _G["img"]:draw()
+	  
+	  --draw lines.
+	  for i = 1, 100 do
+		r2d.drawLine(math.random(), math.random(), math.random(), math.random())
+	  end
+	  
+	  --flush
+	  r2d.flush()
     </Script>
     <Script name="onExit">
-      require("log").trace("Bye.");
+	  local r2d = require("render2d")
+	  if _G["img"] then
+		r2d.disposeImage(_G["img"])
+	  end
+	  
+	  require("log").trace("Bye.");
     </Script>
   </Scripts>
   <Emulators>
