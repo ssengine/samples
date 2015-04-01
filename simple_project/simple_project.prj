@@ -7,10 +7,15 @@
   </UriAliases>
   <Scripts>
     <Script name="onCreate">
+      require("log");
       package.path = "res:///?.lua";
     </Script>
     <Script name="onStart">
       require("main");
+    </Script>
+    <Script name="onFrame">
+      local dt = ...
+      log.info(dt)
     </Script>
     <Script name="onExit">
       require("log").trace("Bye.");
