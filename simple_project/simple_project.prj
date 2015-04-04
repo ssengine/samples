@@ -7,20 +7,18 @@
   </UriAliases>
   <Scripts>
     <Script name="onCreate">
-      require("log");
-      package.path = "res:///?.lua";
+      package.path = package.path .. "res:///?.lua;"
     </Script>
     <Script name="onStart">
-      require("main");
+      require("log")
+      require("runtime")
+      require("main")
+      require("display")
     </Script>
     <Script name="onFrame">
-      local render2d=require("render2d");
       local dt = ...
-      log.info(dt)
-      render2d.drawImage(texture, -1, 1, 2, -2, 0, 0, 1, 1);
-      for i = 1, 100 do
-        render2d.drawLine(math.random(), math.random(), math.random(), math.random())
-      end
+      runtime:tick(dt)
+      display()
     </Script>
     <Script name="onExit">
       require("log").trace("Bye.");
