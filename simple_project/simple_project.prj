@@ -8,12 +8,20 @@
   <Scripts>
     <Script name="onCreate">
       package.path = package.path .. "res:///?.lua;"
+
+      require("log")
+      require("display")
+      require("runtime")
+      
+      function _G.print(...)
+        local ret = {}
+        for i = 1, select('#', ...) do
+          table.insert(ret, tostring(select(i, ...)))
+        end
+        log.info(table.concat(ret, '\t'))
+      end
     </Script>
     <Script name="onStart">
-      require("log")
-      require("runtime")
-      require("display")
-      
       require("main")
     </Script>
     <Script name="onFrame">
@@ -23,6 +31,9 @@
     </Script>
     <Script name="onExit">
       require("log").trace("Bye.");
+    </Script>
+    <Script name="onSizeChanged">
+      display.onSizeChanged(...)
     </Script>
   </Scripts>
   <Emulators>
