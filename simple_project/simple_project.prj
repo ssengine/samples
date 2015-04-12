@@ -12,8 +12,9 @@
     <Script name="onStart">
       require("log")
       require("runtime")
-      require("main")
       require("display")
+      
+      require("main")
     </Script>
     <Script name="onFrame">
       local dt = ...
