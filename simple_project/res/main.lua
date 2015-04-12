@@ -22,7 +22,6 @@ display:add(stage)
 runtime:setInterval(function(ev)
 	-- stage.x = stage.x + 1
 	stage.camera.y = stage.camera.y - 1
-	stage.rotation = stage.rotation +0.1
+	stage.rotation = stage.rotation + 0.1
 end, 0.05)
 
-print(display:getSize())

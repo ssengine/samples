@@ -12,14 +12,8 @@
       require("log")
       require("display")
       require("runtime")
-      
-      function _G.print(...)
-        local ret = {}
-        for i = 1, select('#', ...) do
-          table.insert(ret, tostring(select(i, ...)))
-        end
-        log.info(table.concat(ret, '\t'))
-      end
+      require("mouse2touch")
+      require("logprint")
     </Script>
     <Script name="onStart">
       require("main")
@@ -34,6 +28,22 @@
     </Script>
     <Script name="onSizeChanged">
       display.onSizeChanged(...)
+    </Script>
+    <Script name="onMouseDown">
+      local btn, x, y, t = ...
+      mouse2touch.onMouseDown(btn, x, y, runtime:getTime(t))
+    </Script>
+    <Script name="onLostFocus">
+      local t = ...
+      mouse2touch.onLostFocus(runtime:getTime(t))
+    </Script>
+    <Script name="onMouseUp">
+      local btn, x, y, t = ...
+      mouse2touch.onMouseUp(btn, x, y, runtime:getTime(t))
+    </Script>
+    <Script name="onMouseMove">
+      local x, y, t = ...
+      mouse2touch.onMouseMove(x, y, runtime:getTime(t))
     </Script>
   </Scripts>
   <Emulators>
